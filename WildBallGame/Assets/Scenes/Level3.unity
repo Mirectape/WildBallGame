@@ -37729,7 +37729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc85d904dfdadda4ea2cd58e820388c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelIndexOfNextScene: 7
+  levelIndexOfNextScene: 4
   player: {fileID: 0}
 --- !u!65 &1213227130
 BoxCollider:

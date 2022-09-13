@@ -10,6 +10,7 @@ public class MouseRotation : MonoBehaviour
     private void SetDefaultValues()
     {
         turn.y = -104f; // that's how the camera is initially set
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void ConductRotation()

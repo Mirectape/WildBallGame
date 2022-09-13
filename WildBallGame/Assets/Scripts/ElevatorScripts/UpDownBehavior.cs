@@ -45,13 +45,13 @@ public class UpDownBehavior : MonoBehaviour
     private void MovePlatform()
     {
         if (triggerUp && Input.GetKey(KeyCode.E)) 
-            drifter.transform.position = Vector3.MoveTowards(drifter.transform.position, top.transform.position, Time.deltaTime*2);
+            drifter.transform.position = Vector3.MoveTowards(drifter.transform.position, top.transform.position, Time.deltaTime*4);
         if (triggerDown && Input.GetKey(KeyCode.E)) 
             drifter.transform.position = Vector3.MoveTowards(drifter.transform.position, bottom.transform.position, Time.deltaTime * 2);
         if (triggerLeft && Input.GetKey(KeyCode.E))
-            drifter.transform.position = Vector3.MoveTowards(drifter.transform.position, left.transform.position, Time.deltaTime * 2);
+            drifter.transform.position = Vector3.MoveTowards(drifter.transform.position, left.transform.position, Time.deltaTime * 4);
         if (triggerRight && Input.GetKey(KeyCode.E))
-            drifter.transform.position = Vector3.MoveTowards(drifter.transform.position, right.transform.position, Time.deltaTime * 2);
+            drifter.transform.position = Vector3.MoveTowards(drifter.transform.position, right.transform.position, Time.deltaTime * 4);
     }
 
 

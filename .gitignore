@@ -11,7 +11,8 @@
 [Mm]emoryCaptures/
 [Aa]ssets/AssetStoreTools*
 
-[Aa]ssets/**/*.meta
+#Asset metadata should only be ignored when the corresponding asset is also ignored 
+!/[Aa]ssets/**/*.meta
 
 
 

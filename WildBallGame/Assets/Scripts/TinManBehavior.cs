@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TinManBehavior : MonoBehaviour
 {
+    public GameObject player1;
+    public bool tinManActivated;
     private Vector3 moveDirection;
     Animator animationType;
     private int randomNumberOfStaticPosture;
@@ -22,31 +24,10 @@ public class TinManBehavior : MonoBehaviour
 
     private bool TinManWalks()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (tinManActivated)
         {
-            moveDirection.z += 0.002f;
-            transform.position = moveDirection;
-            return true;
-        }
-
-        else if (Input.GetKey(KeyCode.S))
-        {
-            moveDirection.z -= 0.002f;
-            transform.position = moveDirection;
-            return true;
-        }
-
-        else if (Input.GetKey(KeyCode.A))
-        {
-            moveDirection.x -= 0.002f;
-            transform.position = moveDirection;
-            return true;
-        }
-
-        else if (Input.GetKey(KeyCode.D))
-        {
-            moveDirection.x += 0.002f;
-            transform.position = moveDirection;
+            transform.position = Vector3.MoveTowards(transform.position, player1.transform.position, Time.deltaTime * 11);
+            transform.LookAt(player1.transform);
             return true;
         }
 
@@ -63,7 +44,7 @@ public class TinManBehavior : MonoBehaviour
 
     private void StaticPostureConditions()
     {
-        if(numberOfCyclesPassed == maxNumberOfCyclesForOnePosture)
+        if (numberOfCyclesPassed == maxNumberOfCyclesForOnePosture)
         {
             animationType.SetInteger("AnimationNumber", RandomizeStaticPosition());
             numberOfCyclesPassed = 0;
@@ -82,7 +63,7 @@ public class TinManBehavior : MonoBehaviour
         {
             animationType.SetBool("InMotion", false);
             StaticPostureConditions();
-        }   
+        }
     }
 
     private int RandomizeStaticPosition() => randomNumberOfStaticPosture = Random.Range(0, 3);

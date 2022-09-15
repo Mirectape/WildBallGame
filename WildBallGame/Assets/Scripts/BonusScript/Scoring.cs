@@ -8,7 +8,7 @@ public class Scoring : MonoBehaviour
 
     public GameObject[] gates;
     private int score;
-    public int[] scoresToGain;
+    private int[] scoresToGain;
     
     private void SetDefaultValues()
     {

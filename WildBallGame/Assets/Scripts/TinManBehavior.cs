@@ -26,7 +26,7 @@ public class TinManBehavior : MonoBehaviour
     {
         if (tinManActivated)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player1.transform.position, Time.deltaTime * 11);
+            transform.position = Vector3.MoveTowards(transform.position, player1.transform.position, Time.deltaTime * 14);
             transform.LookAt(player1.transform);
             return true;
         }

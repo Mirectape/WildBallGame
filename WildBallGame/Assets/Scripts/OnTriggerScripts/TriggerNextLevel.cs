@@ -18,14 +18,15 @@ public class TriggerNextLevel : MonoBehaviour
         yield return new WaitForSeconds(1);
         ToLevel();
     }
-    private void OnCollisionEnter()
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (this.tag == "DeathTrigger")
+        if (this.tag == "DeathTrigger" && collision.gameObject.tag == "Player")
         {
             player.GetComponent<ParticleSystem>().Play(); //Play death
             StartCoroutine(ToNextLevelAfterExplosion());
         }
-        else ToLevel();
+        else if(collision.gameObject.tag == "Player") ToLevel();
     }
     
 }
